@@ -37,16 +37,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
         rild.libpath=/system/lib/libril-qc-qmi-1.so
-        
-GAPPS_VARIANT := micro
 
 # the actual meat of the device-specific product definition
 $(call inherit-product, device/asus/flo/device-common.mk)
 
 # inherit from the non-open-source side, if present
 $(call inherit-product-if-exists, vendor/asus/deb/device-vendor.mk)
-
-# OpenGapps
-$(call inherit-product, vendor/google/build/opengapps-packages.mk)
 
 DEVICE_PACKAGE_OVERLAYS := device/asus/deb/overlay
